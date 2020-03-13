@@ -20,5 +20,11 @@ namespace Logic.Interfaces
         /// </summary>
         /// <returns></returns>
         decimal TotalPrice();
+
+        /// <summary>
+        /// Returns the total price including any qualified offers
+        /// </summary>
+        /// <returns></returns>
+        decimal TotalPriceIncludingOffers();
     }
 }

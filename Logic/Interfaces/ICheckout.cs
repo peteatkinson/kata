@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Logic.Interfaces
+﻿namespace Logic.Interfaces
 {
     public interface ICheckout
     {
@@ -12,10 +10,15 @@ namespace Logic.Interfaces
         decimal Scan(Item item);
 
         /// <summary>
-        /// Scans a collection of items in the basket
+        /// Total price excluding any qualified offers
         /// </summary>
-        /// <param name="items"></param>
         /// <returns></returns>
-        decimal Scan(List<Item> items);
+        decimal TotalPriceExcludingOffers();
+
+        /// <summary>
+        /// Total price including any qualified offers
+        /// </summary>
+        /// <returns></returns>
+        decimal TotalPriceIncludingOffers();
     }
 }

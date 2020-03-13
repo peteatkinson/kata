@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Logic.Interfaces;
 
 namespace Logic
@@ -26,15 +25,8 @@ namespace Logic
             return _itemProcessor.TotalPrice();
         }
 
-        /// <summary>
-        /// Scans a collection of items in the basket
-        /// </summary>
-        /// <param name="items"></param>
-        /// <returns></returns>
-        public decimal Scan(List<Item> items)
-        {
-            items?.ForEach(item => _itemProcessor.ProcessItem(item));
-            return _itemProcessor.TotalPrice();
-        }
+        public decimal TotalPriceExcludingOffers() => _itemProcessor.TotalPrice();
+
+        public decimal TotalPriceIncludingOffers() => _itemProcessor.TotalPriceIncludingOffers();
     }
 }
